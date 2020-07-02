@@ -55,7 +55,13 @@
 
         <div class="form-group">
             <label for="image">Avatar</label>
-            <input type="file" name="image" class="form-control" />
+
+            <angular-file-uploader 
+            [config]="afuConfig" 
+            [resetUpload]=resetVar 
+            (ApiResponse)="avatarUpload($event)">
+            </angular-file-uploader>
+
         </div>
 
         <input type="submit" value="Guardar" class="btn btn-success" [disabled]="
