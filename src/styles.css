@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+.avatar_edit{
+    width: 80px;
+    margin-bottom: 10 px;
+}
+
+.avatar_mask{
+    width: 45px;
+    height: 45px;
+    border-radius: 900px;
+    overflow: hidden;
+}
+
+.avatar_mask img {
+    height: 45px;
+}

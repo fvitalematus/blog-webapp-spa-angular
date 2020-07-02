@@ -56,6 +56,10 @@
         <div class="form-group">
             <label for="image">Avatar</label>
 
+            <div *ngIf="identity && identity.image">
+                <img src="{{ url + 'user/avatar' + identity.image }}" class="avatar_edit" />
+            </div>
+
             <angular-file-uploader 
             [config]="afuConfig" 
             [resetUpload]=resetVar 
@@ -67,6 +71,6 @@
         <input type="submit" value="Guardar" class="btn btn-success" [disabled]="
         userEditForm.invalid" />
     </form>
-
+    <br>
 
 </div>
