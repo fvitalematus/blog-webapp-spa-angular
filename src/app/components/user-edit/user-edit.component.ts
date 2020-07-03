@@ -32,7 +32,6 @@ export class UserEditComponent implements OnInit {
     maxSize: "50",
     uploadAPI: {
       url: global.url + 'user/upload',
-      method: "POST",
       headers: {
         "Authorization": this._userService.getToken()
       }
@@ -112,9 +111,9 @@ export class UserEditComponent implements OnInit {
     );
   }
 
-  avatarUpload(datos){
+  avatarUpload(datos) {
     let data = (JSON.parse(datos.response));
     this.user.image = data.image;
-  }   
+  }
 
 }
