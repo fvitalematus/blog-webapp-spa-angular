@@ -2,7 +2,6 @@
     Cargando...
 </div>
 
-
 <div class="container-fluid mt-3" *ngIf="posts">
     <h1>{{page_title}}</h1>
     <hr>
@@ -12,7 +11,7 @@
 
             <div class="card-header">
                 <h3>
-                    <a [routerLink]="['/inicio']">{{post.title}}</a>
+                    <a [routerLink]="['/entrada', post.id]">{{post.title}}</a>
                 </h3>
             </div>
 
@@ -26,14 +25,16 @@
                     <img src="assets/images/default-img.png" class="w-100" />
                 </div>
 
+
                 <!--botones de acción-->
                 <div class="post-buttons mt-3">
-                    <a [routerLink]="['/inicio']" class="btn btn-success mr-2">Leer</a>
+                    <a [routerLink]="['/entrada', post.id]" class="btn btn-success mr-2">Leer</a>
 
                     <!-- Comprobar si el usuario esta identificado para mostrar botones
                     && poder editar solo si el usuario las ha creado-->
                     <span *ngIf="identity && identity.sub == post.user_id">
-                        <a [routerLink]="['/inicio']" class="btn btn-warning mr-2">Editar</a>
+                        <a [routerLink]="['/editar-entrada', post.id]" class="btn btn-warning
+                           mr-2">Editar</a>
                         <a [routerLink]="['/inicio']" class="btn btn-danger">Borrar</a>
                     </span>
 
