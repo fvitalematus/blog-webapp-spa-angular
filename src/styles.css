@@ -14,3 +14,12 @@
 .avatar_mask img {
     height: 45px;
 }
+
+.card-header a{
+    color: #444;
+}
+
+.post-image{
+    height: 200px;
+    overflow: hidden;
+}

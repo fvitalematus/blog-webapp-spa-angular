@@ -1,4 +1,46 @@
-<h1>{{page_title}}</h1>
-<p>
-    home works!
-</p>
+<div class="loading" *ngIf="!posts">
+    Cargando...
+</div>
+
+
+<div class="container-fluid mt-3" *ngIf="posts">
+    <h1>{{page_title}}</h1>
+    <hr>
+
+    <div class="card-columns">
+        <article class="card w-100" *ngFor="let post of posts">
+
+            <div class="card-header">
+                <h3>
+                    <a [routerLink]="['/inicio']">{{post.title}}</a>
+                </h3>
+            </div>
+
+            <div class="card-body">
+                <!--imagen-->
+                <div class="post-image w-100" *ngIf="post.image">
+                    <img src="{{ url + 'post/image/' + post.image }}" class="w-100" />
+                </div>
+
+                <div class="post-image w-100" *ngIf="!post.image">
+                    <img src="assets/images/default-img.png" class="w-100" />
+                </div>
+
+                <!--botones de acción-->
+                <div class="post-buttons mt-3">
+                    <a [routerLink]="['/inicio']" class="btn btn-success mr-2">Leer</a>
+
+                    <!-- Comprobar si el usuario esta identificado para mostrar botones
+                    && poder editar solo si el usuario las ha creado-->
+                    <span *ngIf="identity && identity.sub == post.user_id">
+                        <a [routerLink]="['/inicio']" class="btn btn-warning mr-2">Editar</a>
+                        <a [routerLink]="['/inicio']" class="btn btn-danger">Borrar</a>
+                    </span>
+
+                </div>
+            </div>
+
+        </article>
+    </div>
+
+</div>
