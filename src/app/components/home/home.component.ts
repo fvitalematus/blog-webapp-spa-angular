@@ -4,7 +4,6 @@ import { PostService } from '../../services/post.service';
 import { UserService } from '../../services/user.service';
 import { global } from '../../services/global';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -40,6 +39,17 @@ export class HomeComponent implements OnInit {
 
           console.log(this.posts);
         }
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+  deletePost(id) {
+    this._postService.delete(this.token, id).subscribe(
+      response => {
+        this.getPosts();
       },
       error => {
         console.log(error);
