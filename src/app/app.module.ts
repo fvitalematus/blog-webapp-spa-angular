@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { AngularFileUploaderModule } from "angular-file-uploader";
@@ -17,6 +17,9 @@ import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+
+import { UserService } from './services/user.service';
+import { IdentityGuard } from './services/identity.guard';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     AngularFileUploaderModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    IdentityGuard,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
