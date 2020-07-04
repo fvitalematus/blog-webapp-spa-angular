@@ -1,0 +1,26 @@
+<div class="loading" *ngIf="!posts">
+    Cargando...
+</div>
+
+<div class="container-fluid mt-3" *ngIf="posts">
+
+    <hr>
+    <div id="user-card">
+        <div class="avatar_mask_profile float-left mr-3">
+            <img src="{{ url + 'user/avatar' + identity.image }}" class="avatar_nav" />
+        </div>
+
+        <div class="data-mask float-left">
+            <h1>Perfil de {{user.name + ' ' + user.surname }} </h1>
+            <p [innerHTML]="user.description"></p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <hr>
+
+    <!--LISTADO DE ENTRADAS-->
+    <post-list [posts]="posts"
+               [identity]="identity"
+               [url]="url"></post-list>
+
+</div>

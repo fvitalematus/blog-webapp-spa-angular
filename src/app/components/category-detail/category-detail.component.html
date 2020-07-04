@@ -14,78 +14,9 @@
         No hay entradas que mostrar en esta catgoría.
     </div>
 
-    <div class="card-columns" *ngIf="posts && posts.lenght >= 1">
-        <article class="card w-100" *ngFor="let post of posts">
-
-            <div class="card-header">
-                <h3>
-                    <a [routerLink]="['/entrada', post.id]">{{post.title}}</a>
-                </h3>
-            </div>
-
-            <div class="card-body">
-                <!--imagen-->
-
-                <div class="post-image w-100" *ngIf="post.image">
-                    <img src="{{ url + 'post/image/' + post.image }}" class="w-100" />
-                </div>
-
-                <div class="post-image w-100" *ngIf="!post.image">
-                    <img src="assets/images/default-img.png" class="w-100" />
-                </div>
-
-                <!--botones de acción-->
-                <div class="post-buttons mt-3">
-                    <a [routerLink]="['/entrada', post.id]" class="btn btn-success mr-2">Leer</a>
-
-                    <!-- Comprobar si el usuario esta identificado para mostrar botones
-                    && poder editar solo si el usuario las ha creado-->
-                    <span *ngIf="identity && identity.sub == post.user_id">
-                        <a [routerLink]="['/editar-entrada', post.id]" class="btn btn-warning
-                           mr-2">Editar</a>
-
-                        <!-- Button to Open the Modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal"
-                            [attr.data-target]="'myModal'+post.id">
-                            Borrar
-                        </button>
-
-                        <!-- The Modal -->
-                        <div class="modal" id="{{ 'myModal'+post.id }}">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    <!-- Modal Header -->
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">¿Seguro quieres borrar esta entrada?</h4>
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    </div>
-
-                                    <!-- Modal body -->
-                                    <div class="modal-body">
-                                        Vas a borrar definitivamente {{post.title}}
-                                    </div>
-
-                                    <!-- Modal footer -->
-                                    <div class="modal-footer">
-                                        <a (click)="deletePost(post.id)" class="btn btn-danger"
-                                            data-dismiss="modal">Borrar</a>
-
-                                        <button type="button" class="btn btn-warning"
-                                            data-dismiss="modal">Close</button>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </span>
-
-                </div>
-            </div>
-
-        </article>
-    </div>
-
-
-
+    <!--LISTADO DE ENTRADAS-->
+    <post-list [posts]="posts"
+               [identity]="identity"
+               [url]="url"></post-list>
+    
 </div>
