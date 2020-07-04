@@ -22,7 +22,7 @@
     "angular-file-uploader": "^4.2.1",
     "angular-froala-wysiwyg": "^2.9.8",
     "bootstrap": "^4.5.0",
-    "jquery": "3.3.1",
+    "jquery": "3.5.0",
     "ng2-material-dropdown": "^0.11.0",
     "ngx-chips": "^2.1.0",
     "rxjs": "~6.5.5",
