@@ -6,7 +6,7 @@
 
 </p>
 
-Este repositorio incluye: Desarrollo de una Web App SPA con el framework Angular 10, con el objetivo de crear una aplicación de un Blog. Primero se realizará el backend con Node JS y luego el frontend con Angular.
+Este repositorio incluye: Desarrollo de una Web App SPA con el framework Angular 10, con el objetivo de crear una aplicación de un Blog. Primero se realizará el backend con Laravel y luego el frontend con Angular.
 
 - Modelos y Componentes: Login y Registro.
 - Routing y Menús: Configuración.
