@@ -28,3 +28,8 @@ JSON de configuración
 Portfolio: Angular 10.
 
 Curso de Angular 10 | Nombre: Franco Vitale M. | franco.vitalematus@gmail.com
+
+# Blog Web App SPA con Angular 
+
+![blog register angular](https://user-images.githubusercontent.com/66401629/88470049-c360c680-cec5-11ea-8e1d-8160e0672dcb.jpg)
+
