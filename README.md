@@ -1,4 +1,4 @@
-# Blog: Web App SPA con Angular 10: Desarrollo Front-End y tópicos funcionales con su versión en TypeScript.
+# Web App SPA con Angular 10: Desarrollo Front-End y tópicos funcionales con su versión en TypeScript.
 
 <p align="center"><img src="https://user-images.githubusercontent.com/66401629/88130018-7c15c580-cba7-11ea-8185-554107b23390.png" width="400"></p>
 
